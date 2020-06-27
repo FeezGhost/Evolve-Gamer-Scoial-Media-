@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="sign.css">
+    <title>Signup Page</title>
+</head>
+<body class="bg-dark" id="boo">
+    <div class="pos-f-t">  
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav2">
+                <div class="navbar-nav">    
+                <div class="navbar-headwer">
+                    <a href="#" class="navbar-brand text-warning">Evolve</a>
+                </div>
+                        <a class="nav-link" href="index.html">Landing Page</a>
+                        <a class="nav-item nav-link" href="">Why Evolve?</a>
+                        <a class="nav-item nav-link" href="">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md m-5">
+                <div class="text-light">
+                    <h1 class="display-1">Create YOUR <br>Account Here!</h1>
+                </div>
+            </div>
+        <div class="col-md m-5">
+            
+                <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                    <a class="nav-link bg-dark text-warning active" href="#cute" data-toggle="tab">1</a>
+                    <a class="nav-link bg-dark text-warning" href="#shy" data-toggle="tab">2</a>
+                    <a class="nav-link bg-dark text-warning" href="#third" data-toggle="tab">3</a>
+                    <a class="nav-link bg-dark text-warning" href="#angry" data-toggle="tab">4</a>
+                </nav>
+                <div class="jumbotron bg-dark text-light">
+                
+                    <div class="tab-content text-muted text">
+                        <div class="tab-pane active text-white" id="cute">
+                            <form>
+                            <div class="form-group">
+                                <p class="text-muted">What's your email?</p>
+                                <p class="text-muted">Don't worry we won't tell anyone.</p>
+                                <hr class="my-4">
+                                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp"
+                                    placeholder="Email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <p class="text-muted">Your Name?</p>
+                                <p class="text-muted">Name is important</p>
+                                <hr class="my-4">
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            </div>
+                        </form>
+                        </div>
+                        <div class="tab-pane text-white" id="shy">
+                            <form>
+                                <p class="text-light">What's your gender?</p>
+                                <p class="text-muted">Are you an alien?</p>
+                                <hr class="my-4">
+                                <div class="form-group form-inline">
+                                    <input type="radio" class="mx-1" id="male" name="gender" value="male">
+                                    <label for="male" class="mr-2">Male</label><br>
+                                    <input type="radio" class="mx-1" id="female" name="gender" value="female">
+                                    <label for="female" class="mr-2">Female</label><br>
+                                    <input type="radio" class="mx-1" id="other" name="gender" value="other">
+                                    <label for="other" class="mr-2">Other</label>
+                                </div>
+                                <div class="form-group">
+                                    <p class="text-light">When were you born?</p>
+                                    <p class="text-muted">Let's find out how old you are.</p>
+                                    <hr class="my-4">
+                                    <input type="date" id="birthday" name="birthday" min="1980-01-01">
+                                </div>
+                                <div class="form-group">
+                                    <p class="text-light">Where do you live?</p>
+                                    <p class="text-muted">We don't kidnap people.</p>
+                                    <hr class="my-4">
+                                    <input type="text" class="form-control" id="country" placeholder="COUNTRY NAME">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane text-white" id="third">
+                            <form>
+                                <div class="form-group">
+                                    <p class="text-light">Choose a username</p>
+                                    <p class="text-muted">Used for sign in to evolve world.</p>
+                                    <hr class="my-4">
+                                    <input type="text" class="form-control" id="Username" placeholder="ENTER USERNAME" aria-describedby="pass">
+                                    <small id="uname" class="form-text text-muted">
+                                        Use a cool username.<br>
+                                        Username will be used by others to find you.<br>
+                                        Username cannot be same
+                                    </small> 
+                                </div>
+                        </form>
+                        </div>
+                        <div class="tab-pane text-white" id="angry">
+                            <form>
+                            <p class="text-light">Choose a password</p>
+                            <p class="text-muted">Make sure it's a good one.</p>
+                            <hr class="my-4">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passw" placeholder="Password" aria-describedby="pass">
+                                <small id="pass" class="form-text text-muted">
+                                    Must be Okay strength or better.<br>
+                                    Password is at least 8 characters long.<br>
+                                    Password contains at least one letter or number
+                                </small> 
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="cpassw" placeholder="Confirm Password" >
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning my-2">Submit</button>
+                        </form>
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="jumbotron jumbotron-fluid my-0 bg-dark text-muted">
+            <div class="container">
+                <div class="shadow">
+                    <h3 class="text-center">Want to inbox us?</h1>
+                        <hr>
+                </div>
+                <form class="form-inline justify-content-center">
+                    <input type="email" name="join" placeholder="Type your email" class="form-control" required>
+                    <button type="button" class="btn mx-2 btn-outline-warning">Submit</button>
+                </form>
+                <div class="row my-4">
+                    <div class="col-md-6">
+                        <h1 class="display-3">Quiries</h1>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-warning shadow-sm" href="#">Support</a>
+                                <hr>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning shadow-sm" href="#">Contact</a>
+                                <hr>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning shadow-sm" href="#">FAQs</a>
+                                <hr>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-3">Social Media</h1>
+
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-warning shadow-sm" href="#">Instagram</a>
+                                <hr>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning shadow-sm" href="#">Facebook</a>
+                                <hr>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning shadow-sm" href="#">Twiter</a>
+                                <hr>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <span>Site By Ghosts</span>
+                    <br>
+                    <span>Copyright Ghost Company 2020</span>
+                    <hr class="my-4">
+                    <div class="text-warning">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

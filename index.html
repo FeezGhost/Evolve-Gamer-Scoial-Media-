@@ -16,32 +16,22 @@
 
 <body id="boo">
     <div class="pos-f-t">
-        <div class="collapse " id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h5 class="text-white h4">About Us</h5>
-                <span class="text-muted">We are group of GHOSTS! trying to make an effect on the world by killing
-                    everyone </span>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="navbar-nav">
+                        <div class="navbar-headwer">
+                            <a href="#" class="navbar-brand text-warning">Evolve</a>
+                        </div>
+                        <a class="nav-item nav-link" href="\signup.html">Signup</a>
+                        <a class="nav-item nav-link" href="">Why Evolve?</a>
+                        <a class="nav-item nav-link" href="">Contact</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <nav class="navbar navbar-dark bg-dark sticky-top">
-            <div class="navbar-headwer">
-                <a href="#" class="navbar-brand text-warning">Evolve</a>
-            </div>
-            <ul class="navbar-nav mr-2">
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Signup</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Why Evolve?</a>
-                </li>
-            </ul>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </nav>
     </div>
     <div class="jumbotron jumbotron-fluid bg-dark text-muted" id="jumbo">
@@ -71,13 +61,16 @@
     </nav>
     <div class="tab-content py-5 px-5 mx-5 text-muted text">
         <div class="tab-pane active text-white" id="cute">
-            <h3 >The Cute One</h3>
-            
+            <h3>The Cute One</h3>
+
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero dolore qui atque, corrupti odio
                 tenetur
                 aliquid inventore aliquam rerum. Hic officiis veniam ipsam veritatis adipisci eius quos, ducimus
                 numquam.</p>
-                <img src="img\zT4Ekgz.png" alt="" class="mx-auto img-fluid">
+            <ul class="myImages">
+                <li><img src="img\zT4Ekgz.png" alt="" class="mx-auto img-fluid"></li>
+            </ul>
+
 
         </div>
         <div class="tab-pane text-white" id="shy">
@@ -86,7 +79,10 @@
                 tenetur
                 aliquid inventore aliquam rerum. Hic officiis veniam ipsam veritatis adipisci eius quos, ducimus
                 numquam.</p>
-                <img src="img\unnamed.jpg" alt="" class="mx-auto img-fluid">
+            <ul class="myImages">
+                <li><img src="img\unnamed.jpg" alt="" class="mx-auto img-fluid"></li>
+            </ul>
+
         </div>
         <div class="tab-pane text-white" id="angry">
             <h3>The Angry One</h3>
@@ -94,7 +90,10 @@
                 tenetur
                 aliquid inventore aliquam rerum. Hic officiis veniam ipsam veritatis adipisci eius quos, ducimus
                 numquam.</p>
-                <img src="img\800px_COLOURBOX35667834.jpg" alt="" class="mx-auto img-fluid">
+            <ul class="myImages">
+                <li><img src="img\800px_COLOURBOX35667834.jpg" alt="" class="mx-auto img-fluid"></li>
+            </ul>
+
         </div>
         <div class="tab-pane text-white" id="lost">
             <h3>The Lost One</h3>
@@ -102,53 +101,58 @@
                 tenetur
                 aliquid inventore aliquam rerum. Hic officiis veniam ipsam veritatis adipisci eius quos, ducimus
                 numquam.</p>
-                <img src="img\one.jpg" alt="" class="mx-auto img-fluid">
+            <ul class="myImages">
+                <li><img src="img\one.jpg" alt="" class="mx-auto img-fluid"></li>
+            </ul>
+
         </div>
     </div>
     <div class="footer">
         <div class="jumbotron jumbotron-fluid my-0 bg-dark text-muted">
-            <div class="container"> 
-            <h3 class="text-center">Want to inbox us?</h1>   
-            <hr>
-            <form class="form-inline justify-content-center">
-                <input type="email" name="join" placeholder="Type your email" class="form-control" required>
-               <button type="button" class="btn mx-2 btn-outline-warning">Submit</button>
-            </form>
+            <div class="container">
+                <div class="shadow">
+                    <h3 class="text-center">Want to inbox us?</h1>
+                        <hr>
+                </div>
+                <form class="form-inline justify-content-center">
+                    <input type="email" name="join" placeholder="Type your email" class="form-control" required>
+                    <button type="button" class="btn mx-2 btn-outline-warning">Submit</button>
+                </form>
                 <div class="row my-4">
                     <div class="col-md-6">
                         <h1 class="display-3">Quiries</h1>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link text-warning " href="#">Support</a>
-                              <hr>
+                                <a class="nav-link text-warning shadow-sm" href="#">Support</a>
+                                <hr>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link text-warning" href="#">Contact</a>
-                              <hr>
+                                <a class="nav-link text-warning shadow-sm" href="#">Contact</a>
+                                <hr>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link text-warning" href="#">FAQs</a>
-                              <hr>
+                                <a class="nav-link text-warning shadow-sm" href="#">FAQs</a>
+                                <hr>
                             </li>
-                          </ul>
+                        </ul>
                     </div>
                     <div class="col-md-6">
                         <h1 class="display-3">Social Media</h1>
-                        
+
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link text-warning" href="#">Instagram</a>
-                              <hr>
+                                <a class="nav-link text-warning shadow-sm" href="#">Instagram</a>
+                                <hr>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link text-warning" href="#">Facebook</a>
-                              <hr>
+                                <a class="nav-link text-warning shadow-sm" href="#">Facebook</a>
+                                <hr>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link text-warning" href="#">Twiter</a>
-                              <hr>
+                                <a class="nav-link text-warning shadow-sm" href="#">Twiter</a>
+                                <hr>
                             </li>
-                          </ul>
+                        </ul>
                     </div>
 
                 </div>

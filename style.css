@@ -1,5 +1,26 @@
 #boo{
     background-image: url(img/seamless-doodle-pink-pattern-on-dark-background-vector-30009526.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
+}
+.myImages{
+    padding: 0px 10px;
+    white-space: nowrap;
+    text-align: center;
+    margin: 80px auto;
+
+}
+.myImages li{
+    display: inline-block;
+    max-width: 40%;
+    margin: 20px 3%;
+}
+.myImages li img{
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* pseudo classes */
+.myImages li:hover{
+    position: relative;
+    top: -10px;
 }
