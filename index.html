@@ -23,12 +23,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <div class="navbar-nav">
-                        <div class="navbar-headwer">
+                        <div class="navbar-headwer vl">
                             <a href="#" class="navbar-brand text-warning">Evolve</a>
                         </div>
-                        <a class="nav-item nav-link" href="\signup.html">Signup</a>
-                        <a class="nav-item nav-link" href="">Why Evolve?</a>
-                        <a class="nav-item nav-link" href="">Contact</a>
+                        
+                        <a class="nav-item nav-link mx-5" href="signup.html">Signup</a>
+                        <a class="nav-item nav-link mx-5" href="">Why Evolve?</a>
+                        <a class="nav-item nav-link mx-5" href="">Contact</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +48,7 @@
                 you’re part of a school club, a nightly gaming group, a worldwide art community, or just a handful of
                 friends that want to hang out</p>
             <div class="container my-5">
-                <button type="button" class="px-5 mx-5 btn btn-lg btn-outline-warning">LogIn</button>
+                <button type="button" id="b1" class="px-5 mx-5 btn btn-lg btn-outline-warning">LogIn</button>
                 <button type="button" class="px-5 mx-5 btn btn-lg btn-outline-warning">Signup</button>
             </div>
         </div>
@@ -169,7 +170,34 @@
             </div>
         </div>
     </div>
+    
+    <div class="popup-wrapper">
+        <div class="popup">
+            <div class="popup-content jumbotron bg-dark">
+                <div class="popup-close">X</div>
+                <form>
+                <div class="form-group">
+                    <p class="text-muted">What's your email?</p>
+                    <hr class="my-4">
+                    <input type="email" class="form-control" id="email1"
+                        placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <p class="text-muted">Your Password?</p>
+                    <hr class="my-4">
+                    <input type="password" class="form-control" id="firstName" >
+                </div>
+                <div class="form-group">
+                    
+                <button type="button" id="b1" class="px-5 mx-4 btn btn-outline-warning">LogIn</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
+    
+    <script src="sandbox.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

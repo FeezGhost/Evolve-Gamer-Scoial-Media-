@@ -1,7 +1,15 @@
 #boo{
-    background-image: url(img/seamless-doodle-pink-pattern-on-dark-background-vector-30009526.jpg);
-    background-size: auto;
+    background-image: url(img/thumb-1920-482751.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: darkslategray;
+
 }
+.vl{
+    border-right: 2px solid;
+  }
 .myImages{
     padding: 0px 10px;
     white-space: nowrap;
@@ -18,7 +26,31 @@
     width: 100%;
     max-width: 1200px;
 }
-
+.popup-wrapper{
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.popup-content{
+    text-align: center;
+    font-family: Arial;
+    margin: 10% auto;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+}
+.popup-close{
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    cursor: pointer;
+    color: crimson;
+}
 /* pseudo classes */
 .myImages li:hover{
     position: relative;

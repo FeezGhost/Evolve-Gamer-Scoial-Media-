@@ -1,4 +1,12 @@
 #boo{
-    background-image: url(img/seamless-doodle-pink-pattern-on-dark-background-vector-30009526.jpg);
-    background-size: auto;
+    background-image: url(img/kassadin.png);
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: darkslategray;
 }
+.vl{
+    border-right: 2px solid;
+  }
