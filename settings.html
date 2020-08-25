@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="mainpage.css">
+    <script src="jq.js"></script>
+    <title>Evolve</title>
+</head>
+<body class="bg-dark text-lead">
+    <div id="content">
+
+        <main>
+            <div class="tab-content px-5 mx-5 text-muted text">
+                <div class="tab-pane active text-white" id="cute">
+                    <div id="gen_set">
+                        <h1 class="display-4">General</h1>
+                        <form action="">
+                            <div class="form-group container">
+                                <hr>
+                                <p class="text-muted">Your Name</p>
+                                <hr>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group container">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            </div>
+                            <div class="container form-group">
+                                <hr>
+                                <p class="text-muted">Your Email</p>
+                                <hr>
+                                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp"
+                                    placeholder="Email">
+                            </div>
+                            <div class="form-group container">
+                                <hr>
+                                <p class="text-muted">Choose a username</p>
+                                <hr>
+                                <input type="text" class="form-control" id="Username" placeholder="ENTER USERNAME" aria-describedby="pass">
+                                <small id="uname" class="form-text text-muted">
+                                    Use a cool username.<br>
+                                    Username will be used by others to find you.<br>
+                                    Username cannot be same
+                                </small> 
+                            </div>
+                            <button type="button"  class="btn btn-outline-warning b1">Change Password</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane text-white" id="shy">
+                    <h3>COMING SOON</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero dolore qui atque, corrupti odio
+                        tenetur
+                        aliquid inventore aliquam rerum. Hic officiis veniam ipsam veritatis adipisci eius quos, ducimus
+                        numquam.</p>
+        
+                </div>
+            </div>
+        </main>
+        <nav>
+            <nav class="nav justify-content-center nav-pills flex-column">
+            <a class="nav-link bg-dark text-white active my-4" href="#cute" data-toggle="tab">General</a>
+            <a class="nav-link bg-dark text-white" href="#shy" data-toggle="tab">Privacy</a>
+        </nav>
+        </nav>
+    </div>
+    
+    <div class="popup-wrapper">
+        <div class="popup">
+            <div class="popup-content jumbotron bg-dark">
+                <div class="popup-close">X</div>
+                <form>
+                <div class="form-group">
+                    <p class="text-muted">New Password</p>
+                    <hr class="my-4">
+                    <input type="password" class="form-control" id="email1">
+                </div>
+                <div class="form-group">
+                    <p class="text-muted">Confirm Password</p>
+                    <hr class="my-4">
+                    <input type="password" class="form-control" id="firstName" >
+                </div>
+                <div class="form-group">
+                    
+                <button type="button" class="px-5 mx-4 btn btn-outline-warning">Change</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <nav class="foot navbar navbar-expand-sm navbar-dark ">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <div class="navbar-nav">
+                    <div class="navbar-headwer vl">
+                        <a href="#" class="navbar-brand text-warning">Evolve</a>
+                    </div>
+                    
+                    <a class="nav-item nav-link mx-5" href="signup.html">Signup</a>
+                    <a class="nav-item nav-link mx-5" href="">Why Evolve?</a>
+                    <a id="cont" class="nav-item nav-link mx-5" href="#">Contact</a>
+                </div>
+            </div>
+    </nav>
+    
+    <!-- Optional JavaScript -->
+    <script src="sandbox.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

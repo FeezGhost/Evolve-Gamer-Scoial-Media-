@@ -1,3 +1,91 @@
+<?php
+    include('config/db_connect.php');
+
+    $email = $fname = $lname = $password = $gender = $username = $dateOfBirth  = '';
+    
+    $errors = array('email' => '', 'fname' => '', 'lname' => '' ,'password' => '', 'gender' => '', 'username' => '', 'dateOfBirth' => '');
+    if(isset($_POST['submit'])){
+		// check email
+		if(empty($_POST['email'])){
+			$errors['email'] = 'An email is required';
+		} else{
+			$email = $_POST['email'];
+			if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+				$errors['email'] = 'Email must be a valid email address';
+			}
+        }
+
+		// check first name
+		if(empty($_POST['fname'])){
+			$errors['fname'] = 'A First Name is required';
+		} else{
+			$fname = $_POST['fname'];
+			if(!preg_match('/^[a-zA-Z\s]+$/', $fname)){
+				$errors['fname'] = 'First Name must be letters and spaces only';
+			}
+        }
+		// check last name
+		if(empty($_POST['lname'])){
+			$errors['lname'] = 'A Last Name is required';
+		} else{
+			$lname = $_POST['lname'];
+			if(!preg_match('/^[a-zA-Z\s]+$/', $lname)){
+				$errors['lname'] = 'Last Name must be letters and spaces only';
+			}
+        }
+		// check gender
+		if(empty($_POST['gender'])){
+			$errors['gender'] = 'Gender is required';
+		} else{
+			$gender = $_POST['gender'];
+			if(!preg_match('/^[a-zA-Z\s]+$/', $gender)){
+				$errors['gender'] = 'gender must be letters and spaces only';
+			}
+        }
+		// check username
+		if(empty($_POST['username'])){
+			$errors['username'] = 'A username is required';
+		} else{
+			$username = $_POST['username'];
+			if(!preg_match('/^[a-z\d]{5,12}$/i', $username)){
+				$errors['username'] = 'username must be letters and spaces only';
+			}
+        }
+		// check password
+		if(empty($_POST['password'])){
+			$errors['password'] = 'A password is required';
+		} else{
+			$password = $_POST['password'];
+			if(!preg_match('/^[\d\w@-]{8,20}$/i', $password)){
+				$errors['password'] = 'password must be valid';
+			}
+        }if(array_filter($errors)){
+            //echo 'errors in form';
+		} else {
+			// escape sql chars
+			$email = mysqli_real_escape_string($conn, $_POST['email']);
+			$fname = mysqli_real_escape_string($conn, $_POST['fname']);
+			$lname = mysqli_real_escape_string($conn, $_POST['lname']);
+			$gender = mysqli_real_escape_string($conn, $_POST['gender']);
+			$password = mysqli_real_escape_string($conn, $_POST['password']);
+            $username = mysqli_real_escape_string($conn, $_POST['username']);
+
+			// create sql
+			$sql = "INSERT INTO gamers(username,fname,lname,email,gender, password ) VALUES('$username','$fname','$lname','$email','$gender','$password')";
+
+			// save to db and check
+			if(mysqli_query($conn, $sql)){
+				// success
+				header('Location: index.php');
+			} else {
+				echo 'query error: '. mysqli_error($conn);
+			}
+			
+		}
+
+	} // end POST check
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +122,7 @@
                 <div class="navbar-headwer vl">
                     <a href="#" class="navbar-brand text-warning">Evolve</a>
                 </div>
-                        <a class="nav-link mx-5" href="index.html">Landing Page</a>
+                        <a class="nav-link mx-5" href="index.php">Landing Page</a>
                         <a class="nav-item nav-link mx-5" href="">Why Evolve?</a>
                         <a id="cont" class="nav-item nav-link mx-5" href="3">Contact</a>
                     </div> 
@@ -43,30 +131,20 @@
         </nav>
     </div>
     <div class="container">
-        <div class="row m-5">
-            <div class="col-md m-5">
+        <div class="m-4">
+            <div class="m-4">
                 <div class="text-light">
                     <h1 class="display-1">Create YOUR <br>Account Here!</h1>
                 </div>
-            </div>
-        <div class="col-md m-5">
-            
-                <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
-                    <a class="nav-link bg-dark text-warning active" href="#cute" data-toggle="tab">1</a>
-                    <a class="nav-link bg-dark text-warning" href="#shy" data-toggle="tab">2</a>
-                    <a class="nav-link bg-dark text-warning" href="#third" data-toggle="tab">3</a>
-                    <a class="nav-link bg-dark text-warning" href="#angry" data-toggle="tab">4</a>
-                </nav>
+        <div class="m-4">
                 <div class="jumbotron bg-dark text-light">
-                
-                    <div class="tab-content text-muted text">
-                        <div class="tab-pane active text-white" id="cute">
-                            <form>
+
+                        <form action="signup.php" method="POST">
                             <div class="form-group">
                                 <p class="text-muted">What's your email?</p>
                                 <p class="text-muted">Don't worry we won't tell anyone.</p>
                                 <hr class="my-4">
-                                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp"
+                                <input type="email" class="form-control" name="email" id="email1" aria-describedby="emailHelp"
                                     placeholder="Email">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
@@ -74,15 +152,11 @@
                                 <p class="text-muted">Your Name?</p>
                                 <p class="text-muted">Name is important</p>
                                 <hr class="my-4">
-                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                                <input type="text" class="form-control" name="fname" id="firstName" placeholder="First Name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                <input type="text" class="form-control" name="lname" id="lastName" placeholder="Last Name">
                             </div>
-                        </form>
-                        </div>
-                        <div class="tab-pane text-white" id="shy">
-                            <form>
                                 <p class="text-light">What's your gender?</p>
                                 <p class="text-muted">Are you an alien?</p>
                                 <hr class="my-4">
@@ -98,38 +172,24 @@
                                     <p class="text-light">When were you born?</p>
                                     <p class="text-muted">Let's find out how old you are.</p>
                                     <hr class="my-4">
-                                    <input type="date" id="birthday" name="birthday" min="1980-01-01">
+                                    <input type="date" id="birthDay" name="birthday" min="1980-01-01">
                                 </div>
-                                <div class="form-group">
-                                    <p class="text-light">Where do you live?</p>
-                                    <p class="text-muted">We don't kidnap people.</p>
-                                    <hr class="my-4">
-                                    <input type="text" class="form-control" id="country" placeholder="COUNTRY NAME">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane text-white" id="third">
-                            <form>
                                 <div class="form-group">
                                     <p class="text-light">Choose a username</p>
                                     <p class="text-muted">Used for sign in to evolve world.</p>
                                     <hr class="my-4">
-                                    <input type="text" class="form-control" id="Username" placeholder="ENTER USERNAME" aria-describedby="pass">
+                                    <input type="text" class="form-control" name="username" id="Username" placeholder="ENTER USERNAME" aria-describedby="pass">
                                     <small id="uname" class="form-text text-muted">
                                         Use a cool username.<br>
                                         Username will be used by others to find you.<br>
                                         Username cannot be same
                                     </small> 
                                 </div>
-                        </form>
-                        </div>
-                        <div class="tab-pane text-white" id="angry">
-                            <form>
                             <p class="text-light">Choose a password</p>
                             <p class="text-muted">Make sure it's a good one.</p>
                             <hr class="my-4">
                             <div class="form-group">
-                                <input type="password" class="form-control" id="passw" placeholder="Password" aria-describedby="pass">
+                                <input type="password" name="password" class="form-control" id="passw" placeholder="Password" aria-describedby="pass">
                                 <small id="pass" class="form-text text-muted">
                                     Must be Okay strength or better.<br>
                                     Password is at least 8 characters long.<br>
@@ -139,14 +199,10 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" id="cpassw" placeholder="Confirm Password" >
                             </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <button type="submit" class="btn btn-outline-warning my-2">Submit</button>
+                            <button type="submit" name="submit" id="sub" class="btn btn-outline-warning my-2">Submit</button>
                         </form>
-                        </div>
                     </div>
+            </div>
             </div>
             </div>
 

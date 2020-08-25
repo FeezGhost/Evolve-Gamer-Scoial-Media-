@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Evolve</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="mainpage.css">
+	<style>
+        #content{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            max-width: 100px;
+            height: 100vh;
+            margin: 0;
+            grid-template-areas:
+                "header header header header"
+                "footer footer footer footer"
+                "main main main main"
+                "main main main main"
+                "aside aside nav nav"
+                "section section section section"
+                "section section section section";
+        }
+        /* desktop grid */
+        @media screen and (min-width: 760px){
+    		#content{
+    			display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                height: 100vh;
+    			grid-gap: 2px;
+                max-width: 100%;
+    			margin: 0 0;
+                grid-template-areas:
+                    "aside aside main main main main main"
+                    "aside aside main main main main main"
+                    "footer footer footer footer footer footer footer";
+    		}
+        }
+		#content > *{
+			background: #333;
+			padding: 30px;
+		}
+        main{
+            grid-area: main;
+        }
+        aside{
+            grid-area: aside;
+        }
+        footer{
+            grid-area: footer;
+            background: #333 !important;
+        }
+	</style>
+</head>
+<body>
+
+	<div id="content">
+
+        <main>
+            <div class="col">
+                <button type="button" id="b1" class="px-5 mx-5 btn btn-lg btn-outline-warning">Create Server</button>
+            </div></main>
+        <aside><p class="text-lead">Home</p>
+            <form class="form-inline">
+                <input type="email" name="join" placeholder="Type your email" class="form-control" required>
+            </form>
+            <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://www.instagram.com/makesomericeballs/">Explore Server</a>
+                            <hr>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://www.facebook.com/feezghost/">Explore Players</a>
+                            <hr>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://discord.gg/mC4sfE">Find a Server</a>
+                            <hr>
+                        </li>
+            </ul></aside>
+        <footer><nav class="foot navbar navbar-expand-sm navbar-dark">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <div class="navbar-nav">
+                    <div class="navbar-headwer vl">
+                        <a href="#" class="navbar-brand text-warning">Evolve</a>
+                    </div>
+                    
+                    <a class="nav-item nav-link mx-5" href="signup.html">Signup</a>
+                    <a class="nav-item nav-link mx-5" href="">Why Evolve?</a>
+                    <a id="cont" class="nav-item nav-link mx-5" href="#">Contact</a>
+                </div>
+            </div>
+    </nav></footer>
+
+	</div>
+
+    
+    <!-- Optional JavaScript -->
+    <script src="sandbox.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,3 +1,63 @@
+
+<?php 
+    include('config/db_connect.php');
+    $email = $fname = $lname = $gender = $username = $password = $id  = '';
+    $flag=0;
+    if(isset($_POST['submit'])){
+		// check username
+		if(empty($_POST['username'])){
+            $flag=0;
+		} else{
+            $username = $_POST['username'];
+            $flag=1;
+        }
+		// check gender
+		if(empty($_POST['password'])){
+            $flag=0;
+		} else{
+            $password = $_POST['password'];
+            $flag=1;
+        }
+        if($flag===1){
+            $sql = 'SELECT * FROM gamers';
+            
+            // get the result set (set of rows)
+            $result = mysqli_query($conn, $sql);
+        
+            // fetch the resulting rows as an array
+            $gamers = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        
+            // free the $result from memory (good practise)
+            mysqli_free_result($result);
+            
+            // close connection
+            mysqli_close($conn);
+
+            foreach ($gamers as $gamer) {
+                if(($password === $gamer['password'])&&($username === $gamer['username'])){
+                    $id=$gamer['idGamers'];
+                    $fname=$gamer['fname'];
+                    $lname=$gamer['lname'];
+                    $email=$gamer['email'];
+                    $gender=$gamer['gender'];
+                    $flag=2;
+                break;
+                }
+            }
+            if($flag===2){
+				header("Location: mainpage.php?id=$id");
+            }
+            else{
+                echo("not found");
+            }
+        }
+        else{
+            echo("please fill the data");
+            // close connection
+            mysqli_close($conn);
+        }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +97,7 @@
                             <a href="#" class="navbar-brand text-warning">Evolve</a>
                         </div>
                         
-                        <a class="nav-item nav-link mx-5" href="signup.html">Signup</a>
+                        <a class="nav-item nav-link mx-5" href="signup.php">Signup</a>
                         <a class="nav-item nav-link mx-5" href="">Why Evolve?</a>
                         <a id="cont" class="nav-item nav-link mx-5" href="#">Contact</a>
                     </div>
@@ -59,7 +119,7 @@
                 friends that want to hang out</p>
             <div class="container my-5">
                 <button type="button"  class="px-5 mx-5 btn btn-lg btn-outline-warning b1">LogIn</button>
-                <button type="button" class="px-5 mx-5 btn btn-lg btn-outline-warning" onclick="window.location.href = 'signup.html'"> Signup</button>
+                <button type="button" class="px-5 mx-5 btn btn-lg btn-outline-warning" onclick="window.location.href = 'signup.php'"> Signup</button>
             </div>
         </div>
     </div>
@@ -185,21 +245,21 @@
         <div class="popup">
             <div class="popup-content jumbotron bg-dark">
                 <div class="popup-close">X</div>
-                <form>
+                <form action="index.php" method="POST">
                 <div class="form-group">
-                    <p class="text-muted">What's your email?</p>
+                    <p class="text-muted">What's your Username?</p>
                     <hr class="my-4">
-                    <input type="email" class="form-control" id="email1"
-                        placeholder="Email">
+                    <input type="text" class="form-control" name="username" id="userNAME"
+                        placeholder="Username">
                 </div>
                 <div class="form-group">
                     <p class="text-muted">Your Password?</p>
                     <hr class="my-4">
-                    <input type="password" class="form-control" id="firstName" >
+                    <input type="password" name="password" class="form-control" id="passWorD" >
                 </div>
                 <div class="form-group">
                     
-                <button type="button" id="b1" class="px-5 mx-4 btn btn-outline-warning">LogIn</button>
+                <button type="submit" id="b1" name="submit" class="px-5 mx-4 btn btn-outline-warning">LogIn</button>
                 </div>
             </form>
             </div>
